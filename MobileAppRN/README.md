@@ -2,7 +2,7 @@
 
 ## Flux是Facebook用来构建用户端的web应用的应用程序体系架构。目的是分层解耦，职责划分清晰,它通过利用数据的单向流动为React的可复用的视图组件提供了补充。
 
-## Flux应用主要包括：action、dispatcher、store和views（React components）
+## Flux应用主要包括：action、dispatcher、store和view（React components）
 
 ### 1.action 封装请求
 
