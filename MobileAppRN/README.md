@@ -7,4 +7,4 @@
 ### 3.store 存储处理器，处理业务逻辑，保存数据
 ### 4.view 根据store提供的数据进行展现;接受用户的输入并发出action请求
 
-![image](file:///Users/jimmyzhang/Downloads/824849857-56737f9e098df_articlex.png)
+![image](/FluxRN.png)
