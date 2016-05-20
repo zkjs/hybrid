@@ -1,0 +1,3 @@
+rootProject.name = 'MobileAppRN'
+
+include ':app'
