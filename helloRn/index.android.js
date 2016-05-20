@@ -23,7 +23,7 @@ var SplashScreen = require('./SplashScreen');
 var ImageTest = require('./ImageTest');
 var Test1 = require('./Test1');
 var ListViewTest = require('./ListViewTest');
-//var ToastExample = require('./ToastExample');
+var ToastExample = require('./ToastExample');
 //var ModalTest = require('./ModalTest')
 
 var _navigator;
@@ -43,7 +43,7 @@ class MyProject extends Component{
     if (route.name === 'home') {
       return (
           <View style={styles.container}>
-            <ListViewTest navigator={navigationOperations}/>
+            <ToastExample navigator={navigationOperations}/>
           </View>
       );
     }
