@@ -7,4 +7,4 @@
 ### 3.store 存储处理器，处理业务逻辑，保存数据
 ### 4.view 根据store提供的数据进行展现;接受用户的输入并发出action请求
 
-![image](/FluxRN.png)
+![image](http://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
