@@ -10,6 +10,10 @@ var users = require('./routes/users');
 var persons = require('./routes/persons');
 var gesture = require('./routes/gesture');
 
+var mongoose = require("mongoose");
+var uri = 'mongodb://localhost:27017/test?poolSize=4';
+global.db = mongoose.createConnection(uri);
+
 var app = express();
 
 // view engine setup

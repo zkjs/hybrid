@@ -9,7 +9,7 @@ var Any = new Schema({
    any:{}
 });
 
-var model = mongoose.model('gestureLogDetail', Any, "gestureLogDetail");
+var model = db.model('gestureLogDetail', Any, "gestureLogDetail");
 
 
 module.exports = model;
