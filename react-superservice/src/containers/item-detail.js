@@ -10,8 +10,8 @@ class ItemDetail extends Component {
         return (
             <div>
                 <h4>Details for:</h4>
-                <div>Title: {this.props.item.title}</div>
-                <div>Pages: {this.props.item.pages}</div>
+                <div>UserName: {this.props.item.login}</div>
+                <div>github: <a href={this.props.item.html_url}>{this.props.item.html_url}</a></div>
             </div>
         );
     }

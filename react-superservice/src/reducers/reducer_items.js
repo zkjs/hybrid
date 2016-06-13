@@ -1,8 +1,10 @@
-export default function() {
-    return [
-        { title: 'Javascript: The Good Parts', pages: 101 },
-        { title: 'Thinking in java', pages: 39 },
-        { title: 'Advanced Swift', pages: 85 },
-        { title: 'Haskell', pages: 1 }
-    ];
+import { FETCH_ITEMS } from '../actions/index';
+
+export default function(state = [], action) {
+
+    switch (action.type) {
+    case FETCH_ITEMS:
+        return action.payload.data || []
+    }
+    return state;
 }
