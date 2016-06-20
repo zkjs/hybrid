@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 module.exports = {
   login(email, pass, cb) {
     cb = arguments[arguments.length - 1]
