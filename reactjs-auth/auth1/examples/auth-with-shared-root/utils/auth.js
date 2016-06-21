@@ -1,24 +1,41 @@
 import axios from 'axios'
 
 module.exports = {
-  login(email, pass, cb) {
-    cb = arguments[arguments.length - 1]
-    if (localStorage.token) {
-      if (cb) cb(true)
-      this.onChange(true)
-      return
-    }
- realRequest(email, pass, (res) => {
-      if (res.authenticated) {
-        localStorage.token = res.token
-        if (cb) cb(true)
-        this.onChange(true)
-      } else {
-        if (cb) cb(false)
-        this.onChange(false)
-      }
-    })
-  },
+    login(email, pass, cb) {
+        cb = arguments[arguments.length - 1]
+        if (localStorage.token) {
+            if (cb) cb(true)
+            this.onChange(true)
+            return
+        }
+        realRequest(email, pass, (res) => {
+            if (res.authenticated) {
+                localStorage.token = res.token
+                if (cb) cb(true)
+                this.onChange(true)
+            } else {
+                if (cb) cb(false)
+                this.onChange(false)
+            }
+        })
+    },
+      registerRequest:function(email,pass,cb){
+
+          axios.post('http://localhost:3000/users/register', {
+                  username: email,
+                  password: pass
+              })
+              .then(function (response) {
+                  cb({
+                      authenticated: false//true,
+                      //token: response.data.token
+                  })
+              })
+              .catch(function (error) {
+                  cb({ authenticated: false })
+              });
+
+      },
   /* pretendRequest(email, pass, (res) => {
       if (res.authenticated) {
         localStorage.token = res.token
@@ -63,9 +80,9 @@ function pretendRequest(email, pass, cb) {
 
 function realRequest(email,pass,cb){
 
-  axios.post('localhost:3000', {
-        email: 'email',
-        password: 'pass'
+  axios.post('http://localhost:3000/users/auth', {
+        username: email,
+        password: pass
       })
       .then(function (response) {
         cb({

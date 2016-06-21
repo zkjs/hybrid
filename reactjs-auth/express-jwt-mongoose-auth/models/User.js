@@ -20,7 +20,7 @@ var  UserSchema = new schema({
 //Hash the user's password before inserting a user
 UserSchema.pre('save',function(next){
 	var user = this;
-	if (this.ismodified('password')||this.isnew){
+	//if (this.ismodified('password')||this.isnew){
 		bcrypt.genSalt(10,function(err,salt){//saltRound
 			if(err){
 				return next(err);
@@ -33,9 +33,9 @@ UserSchema.pre('save',function(next){
 				next();
 			});
 		});
-	} else {
-		return next();
-	}
+	//} else {
+	//	return next();
+	//}
 
 });
 
